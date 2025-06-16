@@ -1,3 +1,6 @@
+/*
+* Copyright 2025 12ninstudio All Rights Reserved
+*/
 (function(_0x563514, _0x4aa6fd) {
 	const _0x46b34d = _0x1c92,
 		_0x4783c7 = _0x563514();
