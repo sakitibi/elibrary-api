@@ -1,4 +1,4 @@
-/* Not Minifyed by 13ninstudio, Inc */ const keyMap = {
+const keyMap = {
   "warning-list": "xtELN8QHdW",
   "1": "IZHu54v8NW",
   "friend-code": "JZPJRHToXs",
@@ -316,9 +316,10 @@ const valueMap = {
 
     const reverseKeyMap = Object.fromEntries(Object.entries(keyMap).map(([k, v]) => [v, k]));
     const reverseValueMap = Object.fromEntries(Object.entries(valueMap).map(([k, v]) => [v, k]));
-
     function deobfuscate(obj) {
-        if (Array.isArray(obj)) {
+        if (typeof obj === 'string') {
+            return reverseValueMap[obj] || obj;
+        } else if (Array.isArray(obj)) {
             return obj.map(deobfuscate);
         } else if (typeof obj === 'object' && obj !== null) {
             const result = {};
@@ -327,8 +328,6 @@ const valueMap = {
                 result[originalKey] = deobfuscate(v);
             }
             return result;
-        } else if (typeof obj === 'string') {
-            return reverseValueMap[obj] || obj;
         } else {
             return obj;
         }
@@ -350,7 +349,7 @@ const valueMap = {
         console.log(jsonData["warning-list"]);
         console.log(jsonData);
 
-        const input = document.getElementById("searchInput").value.trim();
+        const input = document.getElementById("searchInput").value;
         const resultDiv = document.getElementById("result");
         resultDiv.innerHTML = "";
 
