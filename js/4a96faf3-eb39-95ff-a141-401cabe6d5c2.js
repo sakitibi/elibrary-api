@@ -182,5 +182,6 @@ $(function() {
   		n.addEventListener("change", function() {
   			n.checked ? i.type = "text" : i.type = "password"
   		})
+	}
     }, 300);
-	};
+};
