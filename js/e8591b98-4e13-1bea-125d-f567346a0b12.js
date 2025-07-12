@@ -353,6 +353,8 @@ async function searchUser() {
     // 動作確認ログ
     console.log("復号済み warning-list keys:", Object.keys(jsonData["warning-list"]));
     console.log("復号後データ全体:", jsonData);
+    console.log(reverseKeyMap["dXNlcm5hbWU="]); // 期待値: "username"
+    console.log(reverseKeyMap["dGFpc2FrdQ=="]); // 期待値: "taisaku"
 
     const input = document.getElementById("searchInput").value.trim().toLowerCase();
     const resultDiv = document.getElementById("result");
