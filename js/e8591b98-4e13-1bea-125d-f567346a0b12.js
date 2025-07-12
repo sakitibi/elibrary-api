@@ -314,8 +314,9 @@ const valueMap = {
   "Chrome Mobile iOS 135.0.7049/iOS 18.5.0": "zyNZiL3TP5"
 };
 
+    // あなたの valueMap は「日本語 → 難読化済み」なので、逆マップには [難読化済み, 日本語] が必要！
     const reverseKeyMap = Object.fromEntries(Object.entries(keyMap).map(([k, v]) => [v, k]));
-    const reverseValueMap = Object.fromEntries(Object.entries(valueMap).map(([k, v]) => [v, k]));
+    const reverseValueMap = Object.fromEntries(Object.entries(valueMap).map(([v, k]) => [k, v]));
     function deobfuscate(obj) {
         if (typeof obj === 'string') {
             return reverseValueMap[obj] || obj;
@@ -349,7 +350,7 @@ const valueMap = {
         console.log(jsonData["warning-list"]);
         console.log(jsonData);
 
-        const input = document.getElementById("searchInput").value;
+        const input = document.getElementById("searchInput").value.trim().toLowerCase();
         const resultDiv = document.getElementById("result");
         resultDiv.innerHTML = "";
 
@@ -359,7 +360,7 @@ const valueMap = {
 
             for (const key in list) {
                 const person = list[key];
-                if (person["username"] && person["username"].includes(input)) {
+                if (person["username"] && person["username"].toLowerCase().includes(input)) {
                     const div = document.createElement("div");
                     div.innerHTML = `
                         <h3>カテゴリ: ${category}</h3>
