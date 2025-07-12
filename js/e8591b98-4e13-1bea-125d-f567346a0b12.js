@@ -348,6 +348,7 @@ const valueMap = {
         }
 
         console.log(jsonData["warning-list"]);
+        console.log(jsonData);
 
         const input = document.getElementById("searchInput").value.trim();
         const resultDiv = document.getElementById("result");
