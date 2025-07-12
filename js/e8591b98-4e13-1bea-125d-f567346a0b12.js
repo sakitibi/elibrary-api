@@ -356,6 +356,8 @@ const valueMap = {
 
         console.log(jsonData["warning-list"]);
         console.log(jsonData);
+        console.log("reverseKeyMap['2h83kF8lnj'] →", reverseKeyMap["2h83kF8lnj"]);
+        console.log("復号した warning-list.keys()", Object.keys(jsonData["warning-list"]));
 
         const input = document.getElementById("searchInput").value.trim().toLowerCase();
         const resultDiv = document.getElementById("result");
