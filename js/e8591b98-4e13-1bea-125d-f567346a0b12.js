@@ -316,7 +316,7 @@ const valueMap = {
 
     // あなたの valueMap は「日本語 → 難読化済み」なので、逆マップには [難読化済み, 日本語] が必要！
     const reverseKeyMap = Object.fromEntries(Object.entries(keyMap).map(([k, v]) => [v, k]));
-    const reverseValueMap = Object.fromEntries(Object.entries(valueMap).map(([v, k]) => [k, v]));
+    const reverseValueMap = Object.fromEntries(Object.entries(valueMap).map(([original, obfuscated]) => [obfuscated, original]));
     function deobfuscate(obj) {
         if (typeof obj === 'string') {
             return reverseValueMap[obj] || obj;
