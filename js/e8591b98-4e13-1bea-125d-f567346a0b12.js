@@ -344,7 +344,16 @@ let jsonData = null;
 async function fetchData() {
     const response = await fetch("./manifest/youchuuijinbutsulist.json");
     const obfuscated = await response.json();
+
+    // 🔍 復号前のキーを確認！
+    console.log("obfuscated root keys:", Object.keys(obfuscated));
+    console.log("復号前の warning-list:", obfuscated["d2FybmluZy1saXN0"]);
+
     jsonData = deobfuscate(obfuscated);
+
+    // 🔎 復号後の確認も
+    console.log("復号後 root keys:", Object.keys(jsonData));
+    console.log("復号後の warning-list:", jsonData["warning-list"]);
 }
 
 async function searchUser() {
