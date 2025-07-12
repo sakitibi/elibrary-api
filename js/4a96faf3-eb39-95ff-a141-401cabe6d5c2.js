@@ -173,9 +173,10 @@ $(function() {
   			} else n = 0;
   			return (o = Object.keys(l).find(e => c.includes(e))) ? (o = l[o], 0 === n ?
   				(d.addClass("weak"), o.weak) : 1 === n ? (d.addClass("medium"), o.medium) :
-  				2 === n ? (d.addClass("strong"), o.strong) : void 0) : void 0
+			2 === n ? (d.addClass("strong"), o.strong) : void 0) : void 0
   		}
-  	},
+	    }
+	},
   	togglePasswordVisibility = (e, t) => {
   		const n = document.getElementById(e),
   			i = document.getElementById(t);
