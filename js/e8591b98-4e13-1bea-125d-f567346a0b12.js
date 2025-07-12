@@ -314,75 +314,84 @@ const valueMap = {
   "Chrome Mobile iOS 135.0.7049/iOS 18.5.0": "zyNZiL3TP5"
 };
 
-    // あなたの valueMap は「日本語 → 難読化済み」なので、逆マップには [難読化済み, 日本語] が必要！
-    const reverseKeyMap = Object.fromEntries(Object.entries(keyMap).map(([original, obfuscated]) => [obfuscated, original]));
-    const reverseValueMap = Object.fromEntries(Object.entries(valueMap).map(([original, obfuscated]) => [obfuscated, original]));
-    function deobfuscate(obj) {
-        if (typeof obj === 'string') {
-            return reverseValueMap[obj] || obj;
-        } else if (Array.isArray(obj)) {
-            return obj.map(deobfuscate);
-        } else if (typeof obj === 'object' && obj !== null) {
-            const result = {};
-            for (const [k, v] of Object.entries(obj)) {
-                const originalKey = reverseKeyMap[k] || k;
-                let value = v;
+// keyMap: プレーン→難読済み、valueMap: 日本語→難読済み
+const reverseKeyMap = Object.fromEntries(
+    Object.entries(keyMap).map(([plain, obf]) => [obf, plain])
+);
+const reverseValueMap = Object.fromEntries(
+    Object.entries(valueMap).map(([plain, obf]) => [obf, plain])
+);
 
-                // 🔍 追加: 値が文字列なら先に reverseValueMap を通してみる
-                if (typeof value === 'string') {
-                    value = reverseValueMap[value] || value;
-                }
+function deobfuscate(obj) {
+    if (typeof obj === 'string') {
+        // 値の復号
+        return reverseValueMap[obj] || obj;
+    } 
+    if (Array.isArray(obj)) {
+        return obj.map(deobfuscate);
+    } 
+    if (typeof obj === 'object' && obj !== null) {
+        const result = {};
+        for (const [k, v] of Object.entries(obj)) {
+            // キーの復号
+            const originalKey = reverseKeyMap[k] || k;
+            let value = v;
 
-                result[originalKey] = deobfuscate(value);
+            // 値も文字列なら復号してから再帰
+            if (typeof value === 'string') {
+                value = reverseValueMap[value] || value;
             }
-            return result;
-        } else {
-            return obj;
+            result[originalKey] = deobfuscate(value);
         }
+        return result;
     }
+    return obj;
+}
 
-    let jsonData = null;
+let jsonData = null;
 
-    async function fetchData() {
-        const response = await fetch("./manifest/youchuuijinbutsulist.json");
-        const obfuscated = await response.json();
-        jsonData = deobfuscate(obfuscated);
-    }
+async function fetchData() {
+    const response = await fetch("./manifest/youchuuijinbutsulist.json");
+    const obfuscated = await response.json();
+    jsonData = deobfuscate(obfuscated);
+}
 
-    async function searchUser() {
-        if (!jsonData) {
-            await fetchData();
-        }
+async function searchUser() {
+    if (!jsonData) await fetchData();
 
-        console.log(jsonData["warning-list"]);
-        console.log(jsonData);
-        console.log("reverseKeyMap['2h83kF8lnj'] →", reverseKeyMap["2h83kF8lnj"]);
-        console.log("復号した warning-list.keys()", Object.keys(jsonData["warning-list"]));
+    // 動作確認ログ
+    console.log("reverseKeyMap['2h83kF8lnj'] →", reverseKeyMap["2h83kF8lnj"]);
+    console.log("復号済み warning-list keys:", Object.keys(jsonData["warning-list"]));
+    console.log("復号後データ全体:", jsonData);
 
-        const input = document.getElementById("searchInput").value.trim().toLowerCase();
-        const resultDiv = document.getElementById("result");
-        resultDiv.innerHTML = "";
+    const input = document.getElementById("searchInput").value.trim().toLowerCase();
+    const resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = "";
 
-        for (const category of ["warning-list", "danger-list", "super-danger-list", "blacklist", "hidden"]) {
-            const list = jsonData[category];
-            if (!list) continue;
-
-            for (const key in list) {
-                const person = list[key];
-                if (person["username"] && person["username"].toLowerCase().includes(input)) {
-                    const div = document.createElement("div");
-                    div.innerHTML = `
-                        <h3>カテゴリ: ${category}</h3>
-                        <p>ユーザー名: ${person["username"] || "なし"}</p>
-                        <p>フレンドコード: ${person["friend-code"] || "なし"}</p>
-                        <p>メールアドレス: ${person["email"] || "なし"}</p>
-                        <p>ネットワークID: ${person["network-id"] || "なし"}</p>
-                        <p>ブラウザID: ${person["browser-id"] || "なし"}</p>
-                        <p>理由: ${person["riyuu"] || "なし"}</p>
-                        <p>対策: ${person["taisaku"] || "なし"}</p>
-                    `;
-                    resultDiv.appendChild(div);
-                }
+    let found = false;
+    for (const category of ["warning-list", "danger-list", "super-danger-list", "blacklist", "hidden"]) {
+        const list = jsonData[category];
+        if (!list) continue;
+        for (const key in list) {
+            const person = list[key];
+            if (person.username?.toLowerCase().includes(input)) {
+                found = true;
+                const div = document.createElement("div");
+                div.innerHTML = `
+                <h3>カテゴリ: ${category}</h3>
+                <p>ユーザー名: ${person.username || "なし"}</p>
+                <p>フレンドコード: ${person["friend-code"] || "なし"}</p>
+                <p>メールアドレス: ${person.email || "なし"}</p>
+                <p>ネットワークID: ${person["network-id"] || "なし"}</p>
+                <p>ブラウザID: ${person["browser-id"] || "なし"}</p>
+                <p>理由: ${person.riyuu || "なし"}</p>
+                <p>対策: ${person.taisaku || "なし"}</p>
+                `;
+                resultDiv.appendChild(div);
             }
         }
     }
+    if (!found) {
+        resultDiv.innerHTML = "<p>該当する人物は見つかりませんでした。</p>";
+    }
+}
