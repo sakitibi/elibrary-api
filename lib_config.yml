@@ -8,6 +8,7 @@ desc:
     b92f2dcf-6429-4725-3d7b-dbd0002d4a84: "tellraw_editor_1.19.4"
     e8591b98-4e13-1bea-125d-f567346a0b12: "blacklist_api",
     ee7a60c5-bd78-5a6e-cbf5-f837686200f9: "tellraw_editor_latest"
+    676bf063-e3c8-55b2-0701-6e87a099cad2: "AES-GCM generator"
   css:
     86f9642a-eaf9-219b-037c-f5bd248a143d: "videoad_stylesheet"
     b927c464-555d-7fa5-0b87-98c0a87879a5: "tellraw_editor_common"
