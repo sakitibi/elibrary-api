@@ -14,5 +14,5 @@ desc:
     86f9642a-eaf9-219b-037c-f5bd248a143d: "videoad_stylesheet"
     b927c464-555d-7fa5-0b87-98c0a87879a5: "tellraw_editor_common"
     f0a0f743-170f-acc9-8d5f-16f3df80abad: "selects_api_common"
-  native:
+  natives:
     15175105-cb6f-dd83-70a1-cc1761b4dc72: "selects_api_main"
