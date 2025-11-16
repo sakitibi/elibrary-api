@@ -2,7 +2,7 @@ desc:
   js:
     1db35307-3da1-1a6c-7210-6fe830b4cdcf: "ip_blocks"
     4a96faf3-eb39-95ff-a141-401cabe6d5c2: "selects_api_jquery"
-    63b0cb71-28f9-483f-bec4-2568fa8b94e4: "selects_api_main"
+    63b0cb71-28f9-483f-bec4-2568fa8b94e4: "selects_api_call"
     676bf063-e3c8-55b2-0701-6e87a099cad2: "AES-GCM generator"
     77a4be0d-62cf-236b-71d8-a85aef088d9e: "selects_api_terms_encoded"
     9097e5ed-a0e3-1522-7594-c09d8abf0628: "woshien_siteimasu"
@@ -14,3 +14,5 @@ desc:
     86f9642a-eaf9-219b-037c-f5bd248a143d: "videoad_stylesheet"
     b927c464-555d-7fa5-0b87-98c0a87879a5: "tellraw_editor_common"
     f0a0f743-170f-acc9-8d5f-16f3df80abad: "selects_api_common"
+  native:
+    15175105-cb6f-dd83-70a1-cc1761b4dc72: "selects_api_main"
