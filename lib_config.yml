@@ -3,6 +3,7 @@ desc:
     1db35307-3da1-1a6c-7210-6fe830b4cdcf: "ip_blocks"
     2e8e0bc0-e79a-5c1e-852b-ac34aec25b51: "takotakoyaki_readme"
     4a96faf3-eb39-95ff-a141-401cabe6d5c2: "selects_api_jquery"
+    5f81ea27-14d0-b9ae-d863-2080dde70538: "pako_gzip_ungzip"
     63b0cb71-28f9-483f-bec4-2568fa8b94e4: "selects_api_call"
     676bf063-e3c8-55b2-0701-6e87a099cad2: "AES-GCM generator"
     77a4be0d-62cf-236b-71d8-a85aef088d9e: "selects_api_terms_encoded"
@@ -14,6 +15,7 @@ desc:
     ee7a60c5-bd78-5a6e-cbf5-f837686200f9: "tellraw_editor_latest"
   css:
     0058e696-f4c8-ae6b-8844-02f316450e34: "AES-GCM generator"
+    457b9ec1-de6e-5f41-f1e4-6e246c83c895: "pako_gzip_ungzip"
     86f9642a-eaf9-219b-037c-f5bd248a143d: "videoad_stylesheet"
     b927c464-555d-7fa5-0b87-98c0a87879a5: "tellraw_editor_common"
   natives:
