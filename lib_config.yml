@@ -11,7 +11,6 @@ desc:
     9097e5ed-a0e3-1522-7594-c09d8abf0628: "woshien_siteimasu"
     ba32a572-1f32-16be-2da3-bda1cbf40acb: "selects_api_common_loading"
     b92f2dcf-6429-4725-3d7b-dbd0002d4a84: "tellraw_editor_1.19.4"
-    e8591b98-4e13-1bea-125d-f567346a0b12: "blacklist_api_load"
     ee7a60c5-bd78-5a6e-cbf5-f837686200f9: "tellraw_editor_latest"
   css:
     0058e696-f4c8-ae6b-8844-02f316450e34: "AES-GCM generator"
@@ -20,7 +19,5 @@ desc:
     b927c464-555d-7fa5-0b87-98c0a87879a5: "tellraw_editor_common"
   natives:
     15175105-cb6f-dd83-70a1-cc1761b4dc72: "selects_api_main"
-    168b0b9f-12a7-4f9a-bfcd-b4f8404a63f2: "blacklist_api_util"
-    85d94458-0488-afc4-cbdb-86f2a6e93af8: "tbw_sudo_install"
     9944fbb0-6448-4a33-850b-3b3a4e4de3b0: "selects_api_common"
     e0246c7f-2ee7-4c89-85dc-3643e29752e2: "notfound_util"
