@@ -8,7 +8,6 @@ desc:
     676bf063-e3c8-55b2-0701-6e87a099cad2: "AES-GCM generator"
     77a4be0d-62cf-236b-71d8-a85aef088d9e: "selects_api_terms_encoded"
     8bd33a52-b1c6-7c0b-fceb-69e1cd49867d: "notfound_util_load"
-    9097e5ed-a0e3-1522-7594-c09d8abf0628: "woshien_siteimasu"
     ba32a572-1f32-16be-2da3-bda1cbf40acb: "selects_api_common_loading"
     b92f2dcf-6429-4725-3d7b-dbd0002d4a84: "tellraw_editor_1.19.4"
     ee7a60c5-bd78-5a6e-cbf5-f837686200f9: "tellraw_editor_latest"
