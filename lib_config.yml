@@ -3,6 +3,7 @@ desc:
     1db35307-3da1-1a6c-7210-6fe830b4cdcf: "ip_blocks"
     2e8e0bc0-e79a-5c1e-852b-ac34aec25b51: "takotakoyaki_readme"
     4a96faf3-eb39-95ff-a141-401cabe6d5c2: "selects_api_jquery"
+    ace5d2ff-b122-28d5-ff7d-eb238d1db552: "pako_gzip_ungzip"
     5f81ea27-14d0-b9ae-d863-2080dde70538: "7zip_un7zip"
     63b0cb71-28f9-483f-bec4-2568fa8b94e4: "selects_api_call"
     676bf063-e3c8-55b2-0701-6e87a099cad2: "AES-GCM generator"
