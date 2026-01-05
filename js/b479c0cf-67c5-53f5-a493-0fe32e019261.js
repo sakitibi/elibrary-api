@@ -1,21 +1,3 @@
-/// © 2015 Nathan Rugg <nmrugg@gmail.com> | MIT
-/// See LICENSE for more details.
-
-/* jshint noarg:true, boss:true, unused:strict, strict:true, undef:true, noarg: true, forin:true, evil:true, newcap:false, -W041, -W021, worker:true, browser:true, node:true */
-
-/* global setImmediate, setTimeout, window, onmessage */
-
-/** xs */
-///NOTE: This is the master file that is used to generate lzma-c.js and lzma-d.js.
-///      Comments are used to determine which parts are to be removed.
-///
-/// cs-ce (compression start-end)
-/// ds-de (decompression start-end)
-/// xs-xe (only in this file start-end)
-/// co    (compression only)
-/// do    (decompression only)
-/** xe */
-
 var LZMA = (function () {
     
     "use strict";
