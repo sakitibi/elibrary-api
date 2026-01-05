@@ -87,7 +87,7 @@ if (typeof Worker === "undefined" || (typeof location !== "undefined" && locatio
             callback_obj = {},
             
             ///NOTE: Node.js needs something like "./" or "../" at the beginning.
-            lzma_worker = new Worker(lzma_path || "./lzma_worker-min.js");
+            lzma_worker = new Worker(lzma_path || "/elibrary-api/js/b479c0cf-67c5-53f5-a493-0fe32e019261.min.js");
         
         lzma_worker.onmessage = function onmessage(e) {
             if (e.data.action === action_progress) {
