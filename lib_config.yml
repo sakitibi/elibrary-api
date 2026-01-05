@@ -18,7 +18,7 @@ desc:
     86f9642a-eaf9-219b-037c-f5bd248a143d: "videoad_stylesheet"
     b927c464-555d-7fa5-0b87-98c0a87879a5: "tellraw_editor_common"
   natives:
-    15175105-cb6f-dd83-70a1-cc1761b4dc72: "selects_api_main"
     9944fbb0-6448-4a33-850b-3b3a4e4de3b0: "selects_api_common"
     e0246c7f-2ee7-4c89-85dc-3643e29752e2: "notfound_util"
+    bdcdb9e6-2b9f-175c-7449-212b8083e804: "selects_api_main"
     fb3aa115-8077-6f0e-c729-eb2e05ebd12e: "seka_daemon"
