@@ -13,6 +13,7 @@ desc:
     b479c0cf-67c5-53f5-a493-0fe32e019261: "lzma_worker"
     b92f2dcf-6429-4725-3d7b-dbd0002d4a84: "tellraw_editor_1.19.4"
     ba32a572-1f32-16be-2da3-bda1cbf40acb: "selects_api_common_loading"
+    ee478d3a-e21d-6586-6b1b-6d98f4ed086e: "wikiwiki_defence_pass_call"
     ee7a60c5-bd78-5a6e-cbf5-f837686200f9: "tellraw_editor_latest"
   css:
     0058e696-f4c8-ae6b-8844-02f316450e34: "AES-GCM generator"
@@ -20,6 +21,7 @@ desc:
     86f9642a-eaf9-219b-037c-f5bd248a143d: "videoad_stylesheet"
     b927c464-555d-7fa5-0b87-98c0a87879a5: "tellraw_editor_common"
   natives:
+    64e757bb-7040-1eb6-1f05-ac2e78e4f6e2: "wikiwiki_defence_pass_main"
     9944fbb0-6448-4a33-850b-3b3a4e4de3b0: "selects_api_common"
     bdcdb9e6-2b9f-175c-7449-212b8083e804: "selects_api_main"
     e0246c7f-2ee7-4c89-85dc-3643e29752e2: "notfound_util"
