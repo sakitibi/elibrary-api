@@ -1,17 +1,17 @@
-window.decodeBase64Unicode = function(base64) {
+window.decodeDoubleForCpp = function(base64) {
     try {
-        window.b64input = window.b64input || [];
-        window.b64decoded = window.b64decoded || [];
-        window.b64input.push(base64);
-        const binaryString = atob(base64);
-        const bytes = new Uint8Array(binaryString.length);
-        for (let i = 0; i < binaryString.length; i++) {
-            bytes[i] = binaryString.charCodeAt(i);
-        }
-        const decoded = new TextDecoder("utf-8").decode(bytes);
-        window.b64decoded.push(decoded);
-        return decoded;
+        const d = (b) => {
+            const bin = atob(b.replace(/\s/g, ''));
+            const bytes = new Uint8Array(bin.length);
+            for (let i = 0; i < bin.length; i++) {
+                bytes[i] = bin.charCodeAt(i);
+            }
+            return new TextDecoder("utf-8").decode(bytes);
+        };
+        // 2回実行して結果を返す
+        return d(d(base64));
     } catch (e) {
+        console.error("Decode Error:", e);
         return "Decode Error";
     }
 };
