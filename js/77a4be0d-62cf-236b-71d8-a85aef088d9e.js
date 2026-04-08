@@ -1,13 +1,15 @@
 window.decodeBase64Unicode = function(base64) {
     try {
-        console.log("b64 input: ", base64);
+        window.b64input = window.b64input || [];
+        window.b64decoded = window.b64decoded || [];
+        window.b64input.push(base64);
         const binaryString = atob(base64);
         const bytes = new Uint8Array(binaryString.length);
         for (let i = 0; i < binaryString.length; i++) {
             bytes[i] = binaryString.charCodeAt(i);
         }
         const decoded = new TextDecoder("utf-8").decode(bytes);
-        console.log("b64 decoded: ", decoded);
+        window.b64decoded.push(decoded);
         return decoded;
     } catch (e) {
         return "Decode Error";
