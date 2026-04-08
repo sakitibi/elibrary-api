@@ -8,7 +8,7 @@ desc:
     5f81ea27-14d0-b9ae-d863-2080dde70538: "lzma_unlzma"
     63b0cb71-28f9-483f-bec4-2568fa8b94e4: "selects_api_call"
     676bf063-e3c8-55b2-0701-6e87a099cad2: "AES-GCM generator"
-    77a4be0d-62cf-236b-71d8-a85aef088d9e: "selects_api_terms_encoded"
+    77a4be0d-62cf-236b-71d8-a85aef088d9e: "selects_api_helper"
     8bd33a52-b1c6-7c0b-fceb-69e1cd49867d: "notfound_util_load"
     b479c0cf-67c5-53f5-a493-0fe32e019261: "lzma_worker"
     b558b5d5-0853-2bd5-f17f-2720eccce647: "wikiwiki_defence_pass2"
